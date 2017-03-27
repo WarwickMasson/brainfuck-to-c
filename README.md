@@ -12,20 +12,5 @@ The commands are as follows:
 	[ : while the head square is not zero do
 	] : end [ block
 
-and that's all. The awesome part about this simplicity is that each command can be mapped exactly to a piece of c code. Firstly, we need memory so create an array of some fixed size. We also need an integer to represent the head.
-
-int memory[size];
-int p = size/2;
-
-Then the transformations are
-
-< : if(p>0)p--;
-> : if(p<size-1)p++;
-+ : memory[p]++;
-- : memory[p]--;
-. : putchar(memory[p]);
-\ : memory[p] = getchar();
-[ : while(memory[p]!=0){
-] : }
-
-We need to limit the head movements so it doesn't go out of the memory. To compile a brainfuck file we just need to go through the characters and emit the right c code.
+and that's all. The awesome part about this simplicity is that each command can be mapped exactly to a piece of c code.
+This is a simple implementation of this which converts each symbol to a piece of c code.
